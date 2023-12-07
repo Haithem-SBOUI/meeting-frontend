@@ -1,15 +1,3 @@
-/* You can add global styles to this file, and also import other style files */
-/* Add this line at the beginning of styles.css */
-@import "~bootstrap/dist/css/bootstrap.min.css";
-:root {
-  --main-color: #A32C30;
-  --second-color: #20262C;
-  --btn1-color: #A32C30;
-  --btn2-color: rgb(245, 164, 37);
-}
-.container {
-  margin-top: 10%;
-}
 
 .custom-btn1 {
   background-color: var(--btn1-color);
