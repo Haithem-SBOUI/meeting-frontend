@@ -1,4 +1,6 @@
-
+.container {
+  margin-top: 10%;
+}
 .custom-btn1 {
   background-color: var(--btn1-color);
   color: white;

@@ -31,7 +31,7 @@ export class LoginComponent implements OnInit {
 
           this.authService.saveUserDetails(response);
           console.log("logged success response : ", response);
-          await this.router.navigate(['/register']);
+          await this.router.navigate(['/welcome']);
         } else {
           console.log("mochkel response : ", response);
         }

@@ -7,9 +7,7 @@
   --btn1-color: #A32C30;
   --btn2-color: rgb(245, 164, 37);
 }
-.container {
-  margin-top: 10%;
-}
+
 
 .custom-btn1 {
   background-color: var(--btn1-color);

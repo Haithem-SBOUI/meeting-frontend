@@ -7,13 +7,25 @@ import { RegisterComponent } from './register/register.component';
 import { MainComponent } from './main/main.component';
 import {ReactiveFormsModule} from "@angular/forms";
 import {HttpClientModule} from "@angular/common/http";
+import { WelcomeComponent } from './welcome/welcome.component';
+import { NavbarComponent } from './navbar/navbar.component';
+import { AllMeetingComponent } from './all-meeting/all-meeting.component';
+import { MeetingDetailsComponent } from './meeting-details/meeting-details.component';
+import { CreateMeetingComponent } from './create-meeting/create-meeting.component';
+import { MeetingRoomComponent } from './meeting-room/meeting-room.component';
 
 
 @NgModule({
   declarations: [
     LoginComponent,
     RegisterComponent,
-    MainComponent
+    MainComponent,
+    WelcomeComponent,
+    NavbarComponent,
+    AllMeetingComponent,
+    MeetingDetailsComponent,
+    CreateMeetingComponent,
+    MeetingRoomComponent
   ],
   imports: [
     CommonModule,
