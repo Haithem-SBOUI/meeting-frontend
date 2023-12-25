@@ -1,0 +1,154 @@
+<user-navbar></user-navbar>
+
+
+<section class="heading-page header-text" id="top">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12">
+        <h6>Here are our upcoming meetings</h6>
+        <h2>Upcoming Meetings</h2>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="meetings-page" id="meetings">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12">
+        <div class="row">
+          <div class="col-lg-12">
+            <div class="filters">
+              <ul>
+                <li data-filter="*" class="active">All Meetings</li>
+                <li data-filter=".soon">Soon</li>
+                <li data-filter=".imp">Important</li>
+                <li data-filter=".att">Attractive</li>
+              </ul>
+            </div>
+          </div>
+
+          <!--create meeting -->
+          <div class="col-md-6 card custom-card1 shadow bg-body-tertiary p-3  mb-5">
+            <div class="card-body">
+              <h2 class="text-center mb-5">Create Meeting</h2>
+              <form class="" [formGroup]="creatMeetingForm" (ngSubmit)="createMeeting()">
+                <!--          title-->
+                <div class="form-floating mb-3">
+                  <input type="text" formControlName="title" class="form-control mb-2" id="title" placeholder="">
+                  <label for="title">Title</label>
+                </div>
+
+
+                <!--          description-->
+                <div class="form-floating mb-3">
+                    <textarea formControlName="description" class="form-control mb-2" id="description"
+                              placeholder=""></textarea>
+                  <label for="description">Description</label>
+                </div>
+
+                <!--          dateTime-->
+                <div class="form-floating mb-3">
+                  <input type="datetime-local" formControlName="dateTime" class="form-control mb-2" id="dateTime"
+                         placeholder="">
+                  <label for="dateTime">When ?</label>
+                </div>
+
+                <!--          maxAttendees-->
+                <div class="form-floating mb-3">
+                  <input type="number" formControlName="maxAttendees" class="form-control mb-2" id="maxAttendees"
+                         placeholder="">
+                  <label for="maxAttendees">Max Attendees</label>
+                </div>
+
+
+                <button type="submit" class="btn custom-btn1 mt-4 mb-2">Create Meet</button>
+
+              </form>
+            </div>
+          </div>
+
+          <!--created meeting -->
+          <div class="col-md-6 card custom-card1 shadow bg-body-tertiary p-3  mb-5" *ngIf="createdMeeting != null">
+            <div class="card-body">
+              <h2 class="text-center mb-5">Created</h2>
+              <!--          room-id-->
+              <div>
+                Room id : {{ this.createdMeeting.roomId }}
+              </div>
+
+              <!--          title-->
+              <div>
+                Room id : {{ this.createdMeeting.title }}
+              </div>
+
+
+              <!--          description-->
+              <div>
+                Room id : {{ this.createdMeeting.description }}
+              </div>
+
+              <!--          dateTime-->
+              <div>
+                Room id : {{ this.createdMeeting.dateTime }}
+              </div>
+
+              <!--          maxAttendees-->
+              <div>
+                Room id : {{ this.createdMeeting.maxAttendees }}
+              </div>
+
+              <div class="col-md-6" *ngIf="showBtnOptions">
+                <button class="custom-btn1" (click)="redirectToDetails()">Show meet details</button>
+              </div>
+
+              <div class="col-md-6"  *ngIf="showBtnOptions">
+                <button class="custom-btn1" (click)="redirectToRoom()">Join Room</button>
+              </div>
+
+
+            </div>
+          </div>
+
+
+          <!--Connected user  -->
+
+          <div class="col-md-4 card custom-card1 shadow bg-body-tertiary p-3 ms-5 mb-5">
+            <div class="card-body">
+              <h2 class="text-center mb-5">Search User</h2>
+              <form class="" [formGroup]="searchUserForm" (ngSubmit)="getUserByEmail()">
+                <div class="form-floating mb-3">
+                  <input type="email" formControlName="email" class="form-control mb-2" id="searchuser"
+                         placeholder="">
+                  <label for="searchuser">Email</label>
+                </div>
+                <button type="submit" class="btn custom-btn1 mt-4 mb-2">Create Meet</button>
+              </form>
+              <h2 class="text-center mb-5">Create Meeting</h2>
+              <div class="connected-user" *ngIf="connectedUser">
+                <ul>
+                  <li>username : {{ connectedUser.username }}</li>
+                  <li>email : {{ connectedUser.email }}</li>
+                  <li>Connected<!-- Example -->
+                    <i class="fa"
+                       [ngClass]="{'fa-check': connectedUser.status === 'connected', 'fa-times': connectedUser.status !== 'connected'}"
+                       [style.color]="connectedUser.status === 'connected' ? 'green' : 'red'"></i>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+      </div>
+    </div>
+
+  </div>
+  <div class="footer">
+    <p>Copyright © 2022 Edu Meeting Co., Ltd. All Rights Reserved.
+      <br>Design: <a href="https://templatemo.com/page/1" target="_parent" title="website templates">TemplateMo</a>
+    </p>
+  </div>
+</section>
+
