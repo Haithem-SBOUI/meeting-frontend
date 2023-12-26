@@ -23,6 +23,7 @@ export function getUrlParams(
 export class MeetingRoomComponent implements OnInit, AfterViewInit {
   @ViewChild('root', {static: false})
   root!: ElementRef;
+
   roomId!: string;
 
   constructor(private authService: AuthService, private route: ActivatedRoute, private router: Router) {
@@ -40,35 +41,56 @@ export class MeetingRoomComponent implements OnInit, AfterViewInit {
     });
     const roomID = getUrlParams().get('roomID') || this.roomId;
 
+
     // const roomID =  "abcd";
     // const roomID: string = this.roomId;
 
     // generate Kit Token
-    const appID = 2034051053;
-    const serverSecret = "d8418c02454782573a6a40bbc1ad1194";
-    const kitToken = ZegoUIKitPrebuilt.generateKitTokenForTest(appID, serverSecret, roomID, this.authService.getUserDetails("id").toString(), this.authService.getUserDetails("username"));
+    const
+      appID = 2034051053;
+    const
+      serverSecret = "d8418c02454782573a6a40bbc1ad1194";
+    const
+      kitToken = ZegoUIKitPrebuilt.generateKitTokenForTest(appID, serverSecret, roomID, this.authService.getUserDetails("id").toString(), this.authService.getUserDetails("username"));
     // const kitToken = ZegoUIKitPrebuilt.generateKitTokenForTest(appID, serverSecret, roomID, this.authService.getUserDetails("id"), this.authService.getUserDetails("username"));
 
     // Create instance object from Kit Token.
-    const zp = ZegoUIKitPrebuilt.create(kitToken);
+    const
+      zp = ZegoUIKitPrebuilt.create(kitToken);
 
     // Start a call.
-    zp.joinRoom({
-      container: this.root.nativeElement,
-      sharedLinks: [
-        {
-          name: 'Personal link',
-          url:
-            window.location.protocol + '//' +
-            window.location.host + window.location.pathname +
-            '?roomID=' +
-            roomID,
+    zp
+      .joinRoom({
+        container: this.root.nativeElement,
+        sharedLinks: [
+          {
+            name: 'Personal link',
+            url:
+              window.location.protocol + '//' +
+              window.location.host + window.location.pathname +
+              '?roomID=' +
+              roomID,
+          },
+        ],
+        scenario: {
+          mode: ZegoUIKitPrebuilt.VideoConference,
         },
-      ],
-      scenario: {
-        mode: ZegoUIKitPrebuilt.VideoConference,
-      },
-    });
+      });
+  }
+
+
+  isMenuClosed: boolean = true;
+
+  toggleMenu() {
+    this.isMenuClosed = !this.isMenuClosed;
+  }
+
+  goHome() {
+    const confirmed = window.confirm("Are you sure you want to go home?");
+
+    if (confirmed) {
+      this.router.navigate(['/welcome']);
+    }
   }
 }
 

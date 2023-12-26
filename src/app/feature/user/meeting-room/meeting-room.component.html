@@ -1,7 +1,28 @@
-<user-navbar></user-navbar>
+
+  <div class="room-wrapper" style="padding: 0; margin: 0;">
+
+<!--      <i class="fa fa-bars menu-toggle overlay-button" (click)="toggleMenu()"></i>-->
+    <li class="li1" [class.menu--is-closed]="!isMenuClosed"><a class="item item-0 menu-toggle" (click)="toggleMenu()"><i class="fa fa-bars"></i></a></li>
 
 
-<p class="mt-5">hello from meeting room</p>
-<div #root id="myRoot" ></div>
+      <div #root id="myRoot" style="padding: 0; margin: 0;" ></div>
+
+
+
+
+    <ul class="menu" [ngClass]="{'menu--is-closed': isMenuClosed}">
+      <li><a class="item item-0 menu-toggle" (click)="toggleMenu()"><i class="fa fa-times"></i></a></li>
+      <li><a (click)="goHome()" class="item item-1"><i class="fa fa-home"></i></a></li>
+      <li><a class="item item-1"><i class="fa fa-step-backward"></i></a></li>
+    </ul>
+  </div>
+
+
+
+<!--  start -->
+
+
+
+      <!--  end -->
 
 
