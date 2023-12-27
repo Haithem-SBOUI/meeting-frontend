@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute} from "@angular/router";
 import {MeetingService} from "../../../core/service/meeting.service";
+import {MeetingDetails} from "../../../model/meeting-details.model";
 
 @Component({
   selector: 'app-meeting-details',
@@ -10,6 +11,8 @@ import {MeetingService} from "../../../core/service/meeting.service";
 export class MeetingDetailsComponent implements OnInit {
 
   roomId!: String;
+  meetingDetail!: any;
+
   constructor(private route: ActivatedRoute, private meetingService: MeetingService) {
   }
 
@@ -21,7 +24,8 @@ export class MeetingDetailsComponent implements OnInit {
 
     this.meetingService.getMeetingByRoomId(this.roomId).subscribe(
       response => {
-        console.log("hedhi response :", response);
+        this.meetingDetail = response;
+        console.log("hedhi response :", this.meetingDetail);
       }, error => {
         console.log("hedhi error :", error);
 

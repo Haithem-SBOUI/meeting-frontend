@@ -3,7 +3,7 @@
 @import "~bootstrap/dist/css/bootstrap.min.css";
 :root {
   --main-color: #A32C30;
-  --second-color: #20262C;
+  --second-color: rgb(32, 38, 44);
   --btn1-color: #A32C30;
   --btn2-color: rgb(245, 164, 37);
 }

@@ -20,165 +20,78 @@
           <div class="col-lg-12">
             <div class="filters">
               <ul>
-                <li data-filter="*"  class="active">All Meetings</li>
-                <li data-filter=".soon">Soon</li>
-                <li data-filter=".imp">Important</li>
-                <li data-filter=".att">Attractive</li>
+                <li data-filter="*" class="active">All Meetings</li>
+                <li data-filter=".NOT_STARTED">Not Strated</li>
+                <li data-filter=".ACTIVE">Active</li>
+                <li data-filter=".COMPLETED">Completed</li>
+                <li data-filter=".CANCELED">Canceled</li>
               </ul>
             </div>
           </div>
           <div class="col-lg-12">
             <div class="row grid">
-              <div class="col-lg-4 templatemo-item-col all soon">
-                <div class="meeting-item">
-                  <div class="thumb">
-                    <div class="price">
-                      <span>$14.00</span>
+              <div *ngFor="let meeting of meetingDetail" class="col-md-4">
+                <div class="col-md-11 templatemo-item-col all {{ meeting.status }}">
+                  <div class="meeting-item">
+                    <div class="thumb">
+                      <div class="price">
+                        <span>{{ meeting.status }}</span>
+                      </div>
+                      <a href="meeting-details.html"><img src="assets/images/meeting-04.jpg" alt=""></a>
                     </div>
-                    <a href="meeting-details.html"><img src="assets/images/meeting-01.jpg" alt=""></a>
-                  </div>
-                  <div class="down-content">
-                    <div class="date">
-                      <h6>Nov <span>12</span></h6>
+                    <div class="down-content">
+                      <a class="title" href="meeting-details.html"
+                         style="text-transform: uppercase; display: block; line-height:15px">{{ meeting.title }}</a>
+                      <!--                    <a (click)="copyTextToClipboard(meeting.roomId)"> <span class="ms-2" style="font-size: 14px; color: grey" >Room code: xxx-yyy-zzz</span> </a><br>-->
+                      <a (click)="copyTextToClipboard(meeting.roomId)">
+                        <span class=""
+                              style="font-size: 14px; color: grey; font-weight: normal">Room code: {{ meeting.roomId }} </span>
+                        <span class="iconify" data-icon="line-md:clipboard-arrow-twotone" data-width="21"
+                              style="color: #595959;"></span> </a>
+                      <br>
+
+
+                      <div class="mt-3" style="font-size: 15px">
+                        <div class="row">
+                          <div class="icon-part">
+                            <span class="iconify" data-icon="uiw:date" data-width="21" data-height="21"></span>
+                          </div>
+                          <div class="text-part">
+                            <span>{{ meeting.dateTime }}</span>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="mt-3">
+                        <div class="row">
+                          <div class="icon-part">
+                            <span class="iconify me-2" data-icon="fa-solid:chalkboard-teacher" data-width="21"></span>
+
+                          </div>
+                          <div class="text-part">
+                            <span>{{ meeting.organizer[0].firstname + " " + meeting.organizer[0].lastname }}</span>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="mt-3">
+                        <div class="row">
+                          <div class="icon-part">
+                            <span class="iconify" data-icon="fluent:text-description-32-filled" data-width="23"></span>
+                          </div>
+                          <div class="text-part">
+                            <span>{{ meeting.description }}</span>
+                          </div>
+                        </div>
+
+
+                        <button class="btn custom-btn1 mt-4" (click)="redirectToDetails(meeting.roomId)">
+                          Show meet details
+                        </button>
+<!--                        todo: add if meeting.datetime - 2 hours the link available, else the button disabled and write under it : joining will be available 2 hours before the meet-->
+                        <button class="btn custom-btn1 mt-2" (click)="redirectToRoom(meeting.roomId)">Join Room</button>
+
+
+                      </div>
                     </div>
-                    <a href="meeting-details.html"><h4>New Lecturers Meeting</h4></a>
-                    <p>Morbi in libero blandit lectus<br>cursus ullamcorper.</p>
-                  </div>
-                </div>
-              </div>
-              <div class="col-lg-4 templatemo-item-col all imp">
-                <div class="meeting-item">
-                  <div class="thumb">
-                    <div class="price">
-                      <span>$22.00</span>
-                    </div>
-                    <a href="meeting-details.html"><img src="assets/images/meeting-02.jpg" alt=""></a>
-                  </div>
-                  <div class="down-content">
-                    <div class="date">
-                      <h6>Nov <span>14</span></h6>
-                    </div>
-                    <a href="meeting-details.html"><h4>Online Teaching Techniques</h4></a>
-                    <p>Morbi in libero blandit lectus<br>cursus ullamcorper.</p>
-                  </div>
-                </div>
-              </div>
-              <div class="col-lg-4 templatemo-item-col all soon">
-                <div class="meeting-item">
-                  <div class="thumb">
-                    <div class="price">
-                      <span>$24.00</span>
-                    </div>
-                    <a href="meeting-details.html"><img src="assets/images/meeting-03.jpg" alt=""></a>
-                  </div>
-                  <div class="down-content">
-                    <div class="date">
-                      <h6>Nov <span>16</span></h6>
-                    </div>
-                    <a href="meeting-details.html"><h4>Network Teaching Concept</h4></a>
-                    <p>Morbi in libero blandit lectus<br>cursus ullamcorper.</p>
-                  </div>
-                </div>
-              </div>
-              <div class="col-lg-4 templatemo-item-col all att">
-                <div class="meeting-item">
-                  <div class="thumb">
-                    <div class="price">
-                      <span>$32.00</span>
-                    </div>
-                    <a href="meeting-details.html"><img src="assets/images/meeting-04.jpg" alt=""></a>
-                  </div>
-                  <div class="down-content">
-                    <div class="date">
-                      <h6>Nov <span>18</span></h6>
-                    </div>
-                    <a href="meeting-details.html"><h4>Online Teaching Tools</h4></a>
-                    <p>Morbi in libero blandit lectus<br>cursus ullamcorper.</p>
-                  </div>
-                </div>
-              </div>
-              <div class="col-lg-4 templatemo-item-col all att">
-                <div class="meeting-item">
-                  <div class="thumb">
-                    <div class="price">
-                      <span>$34.00</span>
-                    </div>
-                    <a href="meeting-details.html"><img src="assets/images/meeting-02.jpg" alt=""></a>
-                  </div>
-                  <div class="down-content">
-                    <div class="date">
-                      <h6>Nov <span>22</span></h6>
-                    </div>
-                    <a href="meeting-details.html"><h4>New Teaching Techniques</h4></a>
-                    <p>Morbi in libero blandit lectus<br>cursus ullamcorper.</p>
-                  </div>
-                </div>
-              </div>
-              <div class="col-lg-4 templatemo-item-col all imp">
-                <div class="meeting-item">
-                  <div class="thumb">
-                    <div class="price">
-                      <span>$45.00</span>
-                    </div>
-                    <a href="meeting-details.html"><img src="assets/images/meeting-03.jpg" alt=""></a>
-                  </div>
-                  <div class="down-content">
-                    <div class="date">
-                      <h6>Nov <span>24</span></h6>
-                    </div>
-                    <a href="meeting-details.html"><h4>Technology Conference</h4></a>
-                    <p>TemplateMo is the best website<br>when it comes to Free CSS.</p>
-                  </div>
-                </div>
-              </div>
-              <div class="col-lg-4 templatemo-item-col all imp att">
-                <div class="meeting-item">
-                  <div class="thumb">
-                    <div class="price">
-                      <span>$52.00</span>
-                    </div>
-                    <a href="meeting-details.html"><img src="assets/images/meeting-01.jpg" alt=""></a>
-                  </div>
-                  <div class="down-content">
-                    <div class="date">
-                      <h6>Nov <span>27</span></h6>
-                    </div>
-                    <a href="meeting-details.html"><h4>Online Teaching Techniques</h4></a>
-                    <p>Morbi in libero blandit lectus<br>cursus ullamcorper.</p>
-                  </div>
-                </div>
-              </div>
-              <div class="col-lg-4 templatemo-item-col all soon imp">
-                <div class="meeting-item">
-                  <div class="thumb">
-                    <div class="price">
-                      <span>$64.00</span>
-                    </div>
-                    <a href="meeting-details.html"><img src="assets/images/meeting-02.jpg" alt=""></a>
-                  </div>
-                  <div class="down-content">
-                    <div class="date">
-                      <h6>Nov <span>28</span></h6>
-                    </div>
-                    <a href="meeting-details.html"><h4>Instant Lecture Design</h4></a>
-                    <p>Morbi in libero blandit lectus<br>cursus ullamcorper.</p>
-                  </div>
-                </div>
-              </div>
-              <div class="col-lg-4 templatemo-item-col all att soon">
-                <div class="meeting-item">
-                  <div class="thumb">
-                    <div class="price">
-                      <span>$74.00</span>
-                    </div>
-                    <a href="meeting-details.html"><img src="assets/images/meeting-03.jpg" alt=""></a>
-                  </div>
-                  <div class="down-content">
-                    <div class="date">
-                      <h6>Nov <span>30</span></h6>
-                    </div>
-                    <a href="meeting-details.html"><h4>Online Social Networking</h4></a>
-                    <p>Morbi in libero blandit lectus<br>cursus ullamcorper.</p>
                   </div>
                 </div>
               </div>

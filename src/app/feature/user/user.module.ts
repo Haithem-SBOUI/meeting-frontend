@@ -10,10 +10,10 @@ import {CreateMeetingComponent} from './create-meeting/create-meeting.component'
 import {MeetingRoomComponent} from './meeting-room/meeting-room.component';
 import {ReactiveFormsModule} from "@angular/forms";
 import {HttpClientModule} from "@angular/common/http";
-import {AppModule} from "../../app.module";
 import {RouterModule} from "@angular/router";
-import { LoginComponent } from './login/login.component';
-import { RegisterComponent } from './register/register.component';
+import {LoginComponent} from './login/login.component';
+import {RegisterComponent} from './register/register.component';
+import {BrowserModule} from "@angular/platform-browser";
 
 
 @NgModule({
@@ -25,14 +25,18 @@ import { RegisterComponent } from './register/register.component';
     MeetingRoomComponent,
     NavbarComponent,
     LoginComponent,
-    RegisterComponent
+    RegisterComponent,
+
+
   ],
   imports: [
     CommonModule,
     UserRoutingModule,
     ReactiveFormsModule,
     HttpClientModule,
-    RouterModule
+    RouterModule,
+    BrowserModule
+
   ]
 })
 export class UserModule {

@@ -1,28 +1,36 @@
+<div class="room-wrapper" style="padding: 0; margin: 0;">
 
-  <div class="room-wrapper" style="padding: 0; margin: 0;">
-
-<!--      <i class="fa fa-bars menu-toggle overlay-button" (click)="toggleMenu()"></i>-->
-    <li class="li1" [class.menu--is-closed]="!isMenuClosed"><a class="item item-0 menu-toggle" (click)="toggleMenu()"><i class="fa fa-bars"></i></a></li>
-
-
-      <div #root id="myRoot" style="padding: 0; margin: 0;" ></div>
-
-
+  <!--      <i class="fa fa-bars menu-toggle overlay-button" (click)="toggleMenu()"></i>-->
+  <li class="li1" [class.menu--is-closed]="!isMenuClosed">
+    <a class="item item-0 menu-toggle" (click)="toggleMenu()">
+      <span class="iconify" data-icon="ep:arrow-right-bold"></span>
+    </a>
+  </li>
 
 
-    <ul class="menu" [ngClass]="{'menu--is-closed': isMenuClosed}">
-      <li><a class="item item-0 menu-toggle" (click)="toggleMenu()"><i class="fa fa-times"></i></a></li>
-      <li><a (click)="goHome()" class="item item-1"><i class="fa fa-home"></i></a></li>
-      <li><a class="item item-1"><i class="fa fa-step-backward"></i></a></li>
-    </ul>
-  </div>
+  <div #root id="myRoot" style="padding: 0; margin: 0;"></div>
 
+
+  <ul class="menu" [ngClass]="{'menu--is-closed': isMenuClosed}">
+    <li><a class="item item-0 menu-toggle" (click)="toggleMenu()">
+      <span class="iconify" data-icon="ep:arrow-left-bold"></span>
+    </a>
+    </li>
+    <li><a (click)="goHome()" class="item item-1">
+      <span class="iconify" data-icon="majesticons:home-line" data-width="35" data-height="35"></span>
+    </a></li>
+    <li>
+      <a class="item item-1">
+        <span class="iconify" data-icon="humbleicons:arrow-go-back"></span>
+      </a>
+    </li>
+  </ul>
+</div>
 
 
 <!--  start -->
 
 
-
-      <!--  end -->
+<!--  end -->
 
 

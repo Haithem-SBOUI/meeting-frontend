@@ -1,0 +1,29 @@
+.icon-part {
+  width: 15%;
+  color: #232323;
+}
+.text-part {
+  width: 75%;
+  color: #232323;
+  font-size: 15px;
+  text-align: justify; /* Align text */
+}
+
+a, .title {
+  font-size: 25px;
+  font-weight: bold;
+  color: var(--main-color) !important;
+  cursor: pointer;
+}
+.custom-btn1 {
+  background-color: var(--btn1-color);
+  color: white;
+  width: 100%;
+}
+
+.custom-btn1:hover {
+  background-color: var(--btn1-color);
+  opacity: 0.9;
+  color: white;
+}
+

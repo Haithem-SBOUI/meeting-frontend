@@ -67,13 +67,12 @@
 }
 
 .item {
-  background-color: #33334c;
-  border-top: 1px solid #182844;
-  border-bottom: 1px solid #253149;
+  background-color: var(--second-color);
+  border-bottom: 2px solid #253149;
   color: white;
   width:   50px;
   height:   50px;
-  line-height:   50px;
+  line-height:   45px;
   display: block;
   text-align: center;
   transition: transform 0.6s ease, background-color 0.1s 0.15s ease;
@@ -84,7 +83,7 @@
 
 
   &:active {
-    background-color: #d64a73;
+    background-color: rgba(32, 38, 44, 0.82);
     color: white;
     transition: all ease 0.2s;
   }

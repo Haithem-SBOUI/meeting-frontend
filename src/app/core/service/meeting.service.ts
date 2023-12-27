@@ -19,4 +19,11 @@ export class MeetingService {
   getMeetingByRoomId(roomId: String) {
     return this.http.get(`${this.baseUrl}/get-meeting-by-room-id/${roomId}`);
   }
+
+  getAllMeetings() {
+    return this.http.get(`${this.baseUrl}/get-all-meeting`)
+  }
+
+
+
 }

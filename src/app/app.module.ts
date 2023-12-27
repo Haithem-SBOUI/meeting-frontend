@@ -5,8 +5,8 @@ import {AppRoutingModule} from './app-routing.module';
 import {AppComponent} from './app.component';
 import {CommonModule} from "@angular/common";
 import {RouterModule} from "@angular/router";
-import { Test1Component } from './shared/test1/test1.component';
-import { Test2Component } from './shared/test2/test2.component';
+import {Test1Component} from './shared/test1/test1.component';
+import {Test2Component} from './shared/test2/test2.component';
 import {UserModule} from "./feature/user/user.module";
 import {AdminModule} from "./feature/admin/admin.module";
 
@@ -14,7 +14,7 @@ import {AdminModule} from "./feature/admin/admin.module";
   declarations: [
     AppComponent,
     Test1Component,
-    Test2Component
+    Test2Component,
   ],
   imports: [
     BrowserModule,
@@ -22,7 +22,9 @@ import {AdminModule} from "./feature/admin/admin.module";
     RouterModule,
     AppRoutingModule,
     AdminModule,
-    UserModule
+    UserModule,
+    BrowserModule
+
 
   ],
   providers: [],
