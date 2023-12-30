@@ -7,7 +7,6 @@ import {CreatedMeet} from "../../model/CreatedMeet.model";
 })
 export class MeetingService {
   private baseUrl = 'http://localhost:8080/api/v1/meeting';
-
   constructor(private http: HttpClient) {
   }
 

@@ -7,6 +7,9 @@ import {Test2Component} from "./shared/test2/test2.component";
 
 const routes: Routes = [
   { path: 'test2', component: Test1Component },
+  { path: 'admin',
+    loadChildren: () => import('./feature/admin/admin-routing.module')
+      .then(m => m.AdminRoutingModule) },
 
   { path: 'user',
     loadChildren: () => import('./feature/user/user-routing.module')

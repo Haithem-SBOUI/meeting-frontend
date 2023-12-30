@@ -9,6 +9,10 @@ import {Test1Component} from './shared/test1/test1.component';
 import {Test2Component} from './shared/test2/test2.component';
 import {UserModule} from "./feature/user/user.module";
 import {AdminModule} from "./feature/admin/admin.module";
+import {DataTablesModule} from "angular-datatables";
+import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
+import {ToastrModule} from "ngx-toastr";
+import { TruncatePipe } from './shared/pipe/truncate.pipe';
 
 @NgModule({
   declarations: [
@@ -23,7 +27,10 @@ import {AdminModule} from "./feature/admin/admin.module";
     AppRoutingModule,
     AdminModule,
     UserModule,
-    BrowserModule
+    BrowserModule,
+    DataTablesModule,
+    BrowserAnimationsModule,
+
 
 
   ],

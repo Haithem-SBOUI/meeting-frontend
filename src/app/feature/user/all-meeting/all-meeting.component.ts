@@ -8,16 +8,17 @@ import {Router} from "@angular/router";
   templateUrl: './all-meeting.component.html',
   styleUrls: ['./all-meeting.component.css']
 })
-export class AllMeetingComponent implements OnInit{
+export class AllMeetingComponent implements OnInit {
   // todo: add format time method
   meetingDetail: MeetingDetails[] = [];
 
-  constructor(private meetingService: MeetingService, private router: Router) {}
+  constructor(private meetingService: MeetingService, private router: Router) {
+  }
 
 
   ngOnInit(): void {
     this.meetingService.getAllMeetings().subscribe(
-      (response:any) => {
+      (response: any) => {
         if (response) {
           this.meetingDetail = response;
           console.log(this.meetingDetail)
@@ -30,14 +31,34 @@ export class AllMeetingComponent implements OnInit{
   }
 
 
-  redirectToRoom(roomId: string | undefined){
+  redirectToRoom(roomId: string | undefined) {
     this.router.navigate(['/meeting-room', roomId]);
   };
 
-  redirectToDetails(roomId: string | undefined){
+  redirectToDetails(roomId: string | undefined) {
     this.router.navigate(['/meeting-details', roomId]);
   };
 
+  formatDateAndTime(dateTime: string | undefined): string {
+    if (dateTime == undefined) {
+      return "00:00";
+    } else {
+      const inputDate = new Date(dateTime);
+
+      const options: Intl.DateTimeFormatOptions = {
+        day: 'numeric',
+        month: 'short',
+        year: 'numeric',
+        hour: 'numeric',
+        minute: 'numeric',
+        hour12: true,
+      };
+
+      const formattedDateString = inputDate.toLocaleString('en-US', options);
+
+      return formattedDateString;
+    }
+  }
 
   copyTextToClipboard(text: string | undefined) {
     const textValue = text !== undefined ? text : '';
@@ -57,7 +78,6 @@ export class AllMeetingComponent implements OnInit{
     console.log('Text copied to clipboard:', text);
     alert('Text copied to clipboard!');
   }
-
 
 
 }

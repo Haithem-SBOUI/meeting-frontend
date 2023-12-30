@@ -1,0 +1,97 @@
+<section class="h-100 h-custom" style="background-color: #eee">
+  <div class="container-fluid py-5 h-100 pt-3 right-box col-md-6">
+    <div class="row d-flex justify-content-center align-items-center h-100">
+      <div class="col">
+        <div class="card">
+          <div class="card-body p-4">
+
+            <!----------------------- right box ---------------------------------->
+
+            <p>{{ meetingForm.value | json }}</p>
+            <!--            <form [formGroup]="meetingForm" (ngSubmit)="update()" class="form" action="">-->
+            <form [formGroup]="meetingForm" class="form" action="">
+              <div class="header-text mb-4">
+                <h2>update property id = {{ this.roomId }}</h2>
+
+              </div>
+              <div class="form-floating mb-3">
+                <input type="text" formControlName="meetingId" class="form-control" id="meetingId"
+                       placeholder="Placeholder">
+                <label for="meetingId">meetingId</label>
+              </div>
+
+              <div class="form-floating mb-3">
+                <input type="text" formControlName="organizerId" class="form-control" id="organizerId"
+                       placeholder="Placeholder">
+                <label for="organizerId">organizerId</label>
+              </div>
+
+              <div class="form-floating mb-3">
+                <input type="text" formControlName="roomId" class="form-control" id="roomId" placeholder="Placeholder">
+                <label for="roomId">roomId</label>
+              </div>
+
+              <div class="form-floating mb-3">
+                <input type="url" formControlName="title" class="form-control" id="title" placeholder="Placeholder">
+                <label for="title">title</label>
+              </div>
+
+
+              <div class="form-group d-flex">
+                <div class="col-md-6">
+                  <div class="form-floating me-2">
+                    <input type="text" formControlName="description" class="form-control" id="description"
+                           placeholder="Placeholder">
+                    <label for="description">description</label>
+                  </div>
+                </div>
+                <div class="col-md-6 mb-5">
+                  <div class="form-floating"> <!-- Add "me-3" for right margin -->
+                    <input type="text" formControlName="dateTime" class="form-control" id="dateTime"
+                           placeholder="Placeholder">
+                    <label for="dateTime">dateTime</label>
+                  </div>
+                </div>
+              </div>
+
+              <div class="form-group d-flex">
+                <div class="col-md-6">
+                  <div class="form-floating me-2">
+                    <input type="text" formControlName="maxAttendees" class="form-control" id="maxAttendees"
+                           placeholder="Placeholder">
+                    <label for="maxAttendees">maxAttendees</label>
+                  </div>
+                </div>
+                <div class="col-md-6 mb-5">
+                  <div class="form-floating"> <!-- Add "me-3" for right margin -->
+                    <input type="text" formControlName="status" class="form-control" id="status"
+                           placeholder="Placeholder">
+                    <label for="status">status</label>
+                  </div>
+                </div>
+              </div>
+
+
+              <div class="form-group d-flex">
+                <div class="col-md-3">
+                  <!--                  <button type="button" (click)="back()" class="btn btn-secondary" >Back</button>-->
+                </div>
+                <div class="col-md-9 ">
+                  <div class="input-group Tmb-3">
+                    <button type="submit" class="btn submit-btn btn-lg w-100 fs-6 mb-3">Submit</button>
+                  </div>
+                </div>
+              </div>
+
+
+            </form>
+
+          </div>
+        </div>
+
+
+      </div>
+    </div>
+  </div>
+</section>
+

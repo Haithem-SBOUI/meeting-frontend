@@ -26,7 +26,7 @@ export class LoginComponent implements OnInit {
 
   login() {
     this.authService.authenticate(this.loginForm.value).subscribe(
-      async(response: any) => {
+      async (response: any) => {
         if (response) {
 
           this.authService.saveUserDetails(response);
@@ -37,7 +37,7 @@ export class LoginComponent implements OnInit {
         }
       }, error => {
         // Handle login error (e.g., display error message)
-        console.error('mocjkel login', error.error);
+        console.error('mochkel login', error.error);
       }
     )
   }

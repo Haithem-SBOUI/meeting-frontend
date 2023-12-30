@@ -1,0 +1,69 @@
+<table datatable [dtOptions]="dtOptions" class="table table-bordered row-border hover">
+  <thead class="">
+  <tr>
+    <th>userId</th>
+    <th>imageUrl</th>
+    <th>username</th>
+    <th>firstname</th>
+    <th>lastname</th>
+    <th>email</th>
+<!--    <th>password</th>-->
+    <th>role</th>
+    <th>Status</th>
+    <th colspan="2">actions</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let user of allUsers">
+    <td>{{ user.userId }}</td>
+    <td><img src="{{user.imageUrl}}" alt="prof_img" style="width: 50px"></td>
+    <td>{{ user.username }}</td>
+    <td>{{ user.firstname }}</td>
+    <td>{{ user.lastname }}</td>
+    <td>{{ user.email }}</td>
+    <!--    <td>{{ user.password }}</td>-->
+    <td>{{ user.role }}</td>
+    <td>{{ user.status }}</td>
+    <td>
+      <button class="form-control btn btn-info bg-info" [routerLink]="['/admin/dashboard/update-user', user.userId]">
+        update
+      </button>
+    </td>
+
+
+    <td>
+
+      <button type="button" class="btn btn-danger" data-bs-toggle="modal"
+              [attr.data-bs-target]="'#exampleModal' + user.userId">
+        Delete
+      </button>
+
+      <!-- Modal -->
+      <div class="modal fade" [id]="'exampleModal' + user.userId" tabindex="-1" aria-labelledby="exampleModalLabel"
+           aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h1 class="modal-title fs-5" id="exampleModalLabel">Confirm delete</h1>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <p>Are you sure you want to delete this user?</p>
+              <p>user id : {{ user.userId }}</p>
+              <p>username: {{ user.username }}</p>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+              <button class="btn bg-danger text-white " (click)="deleteUser(user.userId)" data-bs-dismiss="modal">Delete</button>
+
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+    </td>
+  </tr>
+
+  </tbody>
+</table>

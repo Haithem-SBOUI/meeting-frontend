@@ -1,14 +1,41 @@
-import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import {NgModule} from '@angular/core';
+import {CommonModule} from '@angular/common';
 
-import { AdminRoutingModule } from './admin-routing.module';
+import {AdminRoutingModule} from './admin-routing.module';
+import {MainComponent} from './main/main.component';
+import {DashboardComponent} from './dashboard/dashboard.component';
+import {TableComponent} from './table/table.component';
+import {DataTablesModule} from "angular-datatables";
+import { ShowUserComponent } from './user-management/show-user/show-user.component';
+import { UpdateUserComponent } from './user-management/update-user/update-user.component';
+import {ReactiveFormsModule} from "@angular/forms";
+import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
+import {ToastrModule} from "ngx-toastr";
+import { UpdateMeetingComponent } from './meeting-management/update-meeting/update-meeting.component';
+import { ShowMeetingComponent } from './meeting-management/show-meeting/show-meeting.component';
+import {TruncatePipe} from "../../shared/pipe/truncate.pipe";
 
 
 @NgModule({
-  declarations: [],
+  declarations: [
+    MainComponent,
+    DashboardComponent,
+    TableComponent,
+    ShowUserComponent,
+    UpdateUserComponent,
+    UpdateMeetingComponent,
+    ShowMeetingComponent,
+    TruncatePipe
+  ],
   imports: [
     CommonModule,
-    AdminRoutingModule
+    ReactiveFormsModule,
+    AdminRoutingModule,
+    DataTablesModule,
+    BrowserAnimationsModule, // required animations module
+    ToastrModule.forRoot(), // ToastrModule added
+
   ]
 })
-export class AdminModule { }
+export class AdminModule {
+}

@@ -112,7 +112,7 @@ ul {
 p {
   font-size: 14px;
   line-height: 25px;
-  color: #2a2a2a;
+  /*color: #2a2a2a;*/
 }
 
 img {
@@ -149,7 +149,7 @@ My styles
 
 
 
-.custom-btn1, .btn {
+.custom-btn1 {
   background-color: var(--btn1-color);
   color: white;
   width: 100%;
