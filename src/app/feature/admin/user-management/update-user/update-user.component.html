@@ -1,88 +1,83 @@
+<div class=" container-fluid mt-5 col-md-6 ">
+  <div class="card shadow ">
+    <div class="card-body p-4">
 
-<section class="h-100 h-custom" style="background-color: #eee">
-  <div class="container-fluid py-5 h-100 pt-3 right-box col-md-6">
-    <div class="row d-flex justify-content-center align-items-center h-100">
-      <div class="col">
-        <div class="card">
-          <div class="card-body p-4">
+      <div class="header-text mb-5">
+        <h2 class="text-center">Update User</h2>
+      </div>
 
-            <!----------------------- right box ---------------------------------->
+      <form [formGroup]="userForm" (ngSubmit)="update()" class="form" action="">
+        <div class="form-floating mb-3">
+          <input type="text" formControlName="email" class="form-control" id="email" placeholder="Placeholder">
+          <label for="email">email</label>
+        </div>
 
-            <p>{{ userForm.value | json }}</p>
-            <form [formGroup]="userForm" (ngSubmit)="update()" class="form" action="">
-              <div class="header-text mb-4">
-                <h2>update property id = {{this.id}}</h2>
+        <div class="form-floating mb-3">
+          <input type="text" formControlName="username" class="form-control" id="username" placeholder="Placeholder">
+          <label for="username">username</label>
+        </div>
 
-              </div>
-              <div class="form-floating mb-3">
-                <input type="text" formControlName="username" class="form-control" id="username" placeholder="Placeholder" >
-                <label for="username">username</label>
-              </div>
-
-              <div class="form-floating mb-3">
-                <input type="text" formControlName="firstname" class="form-control" id="firstname" placeholder="Placeholder"  >
-                <label for="firstname">firstname</label>
-              </div>
-
-              <div class="form-floating mb-3">
-                <input type="text" formControlName="lastname" class="form-control" id="lastname" placeholder="Placeholder">
-                <label for="lastname">lastname</label>
-              </div>
-
-              <div class="form-floating mb-3">
-                <input type="text" formControlName="email" class="form-control" id="email" placeholder="Placeholder"  >
-                <label for="email">email</label>
-              </div>
-
-              <div class="form-floating mb-3">
-                <input type="url" formControlName="imageUrl" class="form-control" id="imageUrl" placeholder="Placeholder" >
-                <label for="imageUrl">imageUrl</label>
-              </div>
-
-
-
-              <div class="form-group d-flex">
-                <div class="col-md-6">
-                  <div class="form-floating me-2">
-                    <input type="text" formControlName="password" class="form-control" id="enabled" placeholder="Placeholder">
-                    <label for="enabled">Password</label>
-                  </div>
-                </div>
-                <div class="col-md-6 mb-5">
-                  <div class="form-floating" > <!-- Add "me-3" for right margin -->
-                    <input type="text" formControlName="role" class="form-control" id="role" placeholder="Placeholder" >
-                    <label for="role">role</label>
-                  </div>
-                </div>
-              </div>
-
-
-              <div class="form-group d-flex">
-                <div class="col-md-3">
-<!--                  <button type="button" (click)="back()" class="btn btn-secondary" >Back</button>-->
-                </div>
-                <div class="col-md-9 ">
-                  <div class="input-group Tmb-3">
-                    <button type="submit" class="btn submit-btn btn-lg w-100 fs-6 mb-3">Submit</button>
-                  </div>
-                </div>
-              </div>
-
-
-            </form>
+        <div class="row">
+          <div class="col-md-6">
+            <div class="form-floating mb-3">
+              <input type="text" formControlName="firstname" class="form-control" id="firstname" placeholder="Placeholder">
+              <label for="firstname">firstname</label>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="form-floating mb-3">
+              <input type="text" formControlName="lastname" class="form-control" id="lastname" placeholder="Placeholder">
+              <label for="lastname">lastname</label>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-6">
 
           </div>
         </div>
 
 
+        <div class="form-floating mb-3">
+          <input type="url" formControlName="imageUrl" class="form-control" id="imageUrl" placeholder="Placeholder">
+          <label for="imageUrl">imageUrl</label>
+        </div>
 
 
+        <div class="form-group row">
+          <div class="col-md-6">
+            <div class="form-floating me-lg-2">
+              <input type="password" formControlName="password" class="form-control" id="enabled" placeholder="Placeholder">
+              <label for="enabled">Password</label>
+            </div>
+          </div>
+          <div class="col-md-6 mt-3 mt-lg-0 mb-5">
+            <div class="form-floating"> <!-- Add "me-3" for right margin -->
+              <select class="form-select form-control p-3" formControlName="role">
+                <option selected>Select Role</option>
+                <option *ngFor="let role of roleList" [value]="role">{{ role }}</option>
+              </select>
+            </div>
+          </div>
+        </div>
 
 
+        <div class="form-group d-flex">
+          <div class="col-md-3">
+            <button type="button" (click)="back()" class="btn btn-secondary">Back</button>
+          </div>
+          <div class="col-md-9 ">
+            <div class="input-group Tmb-3">
+              <button type="submit" class="btn custom-btn1 btn-lg w-100 fs-6 mb-3">Submit</button>
+            </div>
+          </div>
+        </div>
 
 
-      </div>
+      </form>
+
     </div>
   </div>
-</section>
 
+
+</div>

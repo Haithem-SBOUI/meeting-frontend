@@ -32,6 +32,9 @@ export class AdminUserService {
     return this.http.delete(`${this.userBaseUrl}/delete-user/${id}`);
   }
 
+  getUserRole() {
+    return this.http.get(`${this.userBaseUrl}/all-user-roles`);
+  }
 
   getAllMeeting() {
     return this.http.get(`${this.meetingBaseUrl}/get-all-meeting`);
@@ -40,7 +43,5 @@ export class AdminUserService {
 
   getMeetingById(roomId: string) {
     return this.http.get(`${this.meetingBaseUrl}/get-meeting-by-room-id/${roomId}`);
-
-
   }
 }

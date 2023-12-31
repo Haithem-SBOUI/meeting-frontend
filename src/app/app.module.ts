@@ -13,12 +13,14 @@ import {DataTablesModule} from "angular-datatables";
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import {ToastrModule} from "ngx-toastr";
 import { TruncatePipe } from './shared/pipe/truncate.pipe';
+import { FormatDateTimePipe } from './shared/pipe/format-date-time.pipe';
 
 @NgModule({
   declarations: [
     AppComponent,
     Test1Component,
     Test2Component,
+
   ],
   imports: [
     BrowserModule,

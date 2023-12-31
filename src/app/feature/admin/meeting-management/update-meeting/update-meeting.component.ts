@@ -31,6 +31,7 @@ export class UpdateMeetingComponent implements OnInit {
     status: ['', Validators.required]
   });
 
+
   ngOnInit(): void {
     this.roomId = this.route.snapshot.params['id'];
     this.adminUserServ.getMeetingById(this.roomId).subscribe((response: any) => {
@@ -40,7 +41,7 @@ export class UpdateMeetingComponent implements OnInit {
 
         this.meetingForm.patchValue({
           meetingId: this.meeting?.meetingId || '',
-          organizerId: this.meeting?.organizer.organizerId || '',
+          organizerId: this.meeting?.organizer[0].email || '',
           roomId: this.meeting?.roomId || '',
           title: this.meeting?.title || '',
           description: this.meeting?.description || '',
@@ -48,10 +49,14 @@ export class UpdateMeetingComponent implements OnInit {
           maxAttendees: this.meeting?.maxAttendees || '',
           status: this.meeting?.status || ''
         });
+        this.meetingForm.get('organizerId')?.disable();
+
       } else {
         console.log('response is undefined');
       }
     });
+
+
   }
 
   // update() {

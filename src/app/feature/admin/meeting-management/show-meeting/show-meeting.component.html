@@ -19,7 +19,7 @@
     <td>{{ meeting.roomId }}</td>
     <td>{{ meeting.title }}</td>
     <td>{{ meeting.description | truncate:5 }}</td>
-    <td>{{ meeting.dateTime }}</td>
+    <td>{{ meeting.dateTime | formatDateTime }}</td>
     <td>{{ meeting.maxAttendees }}</td>
     <td>{{ meeting.status }}</td>
     <td>

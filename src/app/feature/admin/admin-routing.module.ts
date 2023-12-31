@@ -7,6 +7,7 @@ import {ShowUserComponent} from "./user-management/show-user/show-user.component
 import {UpdateUserComponent} from "./user-management/update-user/update-user.component";
 import {ShowMeetingComponent} from "./meeting-management/show-meeting/show-meeting.component";
 import {UpdateMeetingComponent} from "./meeting-management/update-meeting/update-meeting.component";
+import {AddUserComponent} from "./user-management/add-user/add-user.component";
 
 const routes: Routes = [
   {
@@ -16,6 +17,7 @@ const routes: Routes = [
       {path: 'main', component: MainComponent},
       {path: 'table', component: TableComponent},
       {path: 'show-user', component: ShowUserComponent},
+      {path: 'add-user', component: AddUserComponent},
       {path: 'update-user/:id', component: UpdateUserComponent},
       {path: 'show-meeting', component: ShowMeetingComponent},
       {path: 'update-meeting/:id', component: UpdateMeetingComponent},

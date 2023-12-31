@@ -1,0 +1,60 @@
+<div class="container mt-5">
+  <div class="row justify-content-center">
+    <div class="col-md-6 card custom-card2 shadow bg-body-tertiary p-3 mb-5">
+      <div class="card-body">
+        <h2 class="text-center mb-5">Register</h2>
+        <form class="" [formGroup]="registerForm" (ngSubmit)="register()">
+          <!--          email-->
+          <div class="form-floating mb-3">
+            <input formControlName="email" type="email" class="form-control mb-2" id="fEmail" placeholder="">
+            <label for="fEmail">Email address</label>
+          </div>
+
+          <!--          firstname and lastname -->
+          <div class="row  mb-2">
+            <div class="col-md-6 form-floating mb-3">
+              <input formControlName="firstname" type="text" class="form-control" id="fFirstname" placeholder="">
+              <label for="fFirstname" class="ms-3">Firstname</label>
+            </div>
+            <div class="col-md-6 form-floating mb-3">
+              <input formControlName="lastname" type="text" class="form-control" id="fLastname" placeholder="">
+              <label for="fLastname" class="ms-3">Lastname</label>
+            </div>
+          </div>
+
+          <!--          username and role-->
+          <div class="row  mb-2">
+            <div class="col-md-6 form-floating mb-3">
+              <input formControlName="username" type="email" class="form-control mb-2" id="fUsername" placeholder="">
+              <label for="fUsername" class="ms-3">Username</label>
+            </div>
+
+            <div class="col-md-6 form-floating mb-3">
+              <select class="form-select form-control p-3" formControlName="role">
+                <option selected>Select Role</option>
+                <option *ngFor="let role of roleList" [value]="role">{{ role }}</option>
+              </select>
+            </div>
+          </div>
+
+          <!--          password-->
+          <div class="row  mb-2">
+            <div class="col-md-6 form-floating mb-3">
+              <input formControlName="password" type="password" class="form-control mb-2" id="fPassword1"
+                     placeholder="">
+              <label for="fPassword1" class="ms-3">Password</label>
+            </div>
+            <div class="col-md-6 form-floating mb-3">
+              <input type="password" class="form-control mb-2" id="fPassword2" placeholder="">
+              <label for="fPassword2" class="ms-3">Confirm Password</label>
+            </div>
+          </div>
+
+          <button type="submit" class="btn custom-btn2 mt-4 mb-2">Register</button>
+          <a class="ms-2" routerLink="/login">Show All User</a>
+
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
