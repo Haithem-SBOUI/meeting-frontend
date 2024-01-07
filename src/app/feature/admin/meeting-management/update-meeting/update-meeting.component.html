@@ -6,8 +6,8 @@
         <h2 class="text-center">Update Meeting</h2>
       </div>
 
-            <!--            <form [formGroup]="meetingForm" (ngSubmit)="update()" class="form" action="">-->
-            <form [formGroup]="meetingForm" class="form" action="">
+                        <form [formGroup]="meetingForm" (ngSubmit)="update()" class="form" action="">
+<!--            <form [formGroup]="meetingForm" class="form" action="">-->
               <div class="form-floating mb-3">
                 <input type="text" formControlName="meetingId" class="form-control" id="meetingId"
                        placeholder="Placeholder">
@@ -53,7 +53,7 @@
               <div class="form-group d-flex">
                 <div class="col-md-6">
                   <div class="form-floating me-2">
-                    <input type="number" formControlName="maxAttendees" class="form-control" id="maxAttendees"
+                    <input type="text" formControlName="maxAttendees" class="form-control" id="maxAttendees"
                            placeholder="Placeholder">
                     <label for="maxAttendees">maxAttendees</label>
                   </div>

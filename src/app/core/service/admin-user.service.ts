@@ -44,4 +44,15 @@ export class AdminUserService {
   getMeetingById(roomId: string) {
     return this.http.get(`${this.meetingBaseUrl}/get-meeting-by-room-id/${roomId}`);
   }
+
+updateMeeting(id: string, updatedMeeting: any) {
+    return this.http.put<any>(`${this.meetingBaseUrl}/update-meeting/${id}/`, updatedMeeting);
+}
+
+updatePassword(id: any, data: any){
+  return this.http.put(`${this.userBaseUrl}/update-password/${id}`, data);
+}
+
+
+
 }

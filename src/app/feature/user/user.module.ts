@@ -8,12 +8,14 @@ import {AllMeetingComponent} from './all-meeting/all-meeting.component';
 import {MeetingDetailsComponent} from './meeting-details/meeting-details.component';
 import {CreateMeetingComponent} from './create-meeting/create-meeting.component';
 import {MeetingRoomComponent} from './meeting-room/meeting-room.component';
-import {ReactiveFormsModule} from "@angular/forms";
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {HttpClientModule} from "@angular/common/http";
 import {RouterModule} from "@angular/router";
 import {LoginComponent} from './login/login.component';
 import {RegisterComponent} from './register/register.component';
 import {BrowserModule} from "@angular/platform-browser";
+import { AccountDetailsComponent } from './settings/account-details/account-details.component';
+import { SecurityComponent } from './settings/security/security.component';
 
 
 @NgModule({
@@ -26,18 +28,21 @@ import {BrowserModule} from "@angular/platform-browser";
     NavbarComponent,
     LoginComponent,
     RegisterComponent,
+    AccountDetailsComponent,
+    SecurityComponent,
 
 
   ],
-  imports: [
-    CommonModule,
-    UserRoutingModule,
-    ReactiveFormsModule,
-    HttpClientModule,
-    RouterModule,
-    BrowserModule
+    imports: [
+        CommonModule,
+        UserRoutingModule,
+        ReactiveFormsModule,
+        HttpClientModule,
+        RouterModule,
+        BrowserModule,
+        FormsModule
 
-  ]
+    ]
 })
 export class UserModule {
 }

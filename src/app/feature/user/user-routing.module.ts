@@ -8,6 +8,8 @@ import {MeetingRoomComponent} from "./meeting-room/meeting-room.component";
 import {NavbarComponent} from "./navbar/navbar.component";
 import {LoginComponent} from "./login/login.component";
 import {RegisterComponent} from "./register/register.component";
+import {AccountDetailsComponent} from "./settings/account-details/account-details.component";
+import {SecurityComponent} from "./settings/security/security.component";
 
 const routes: Routes = [
   {path: "welcome", component: WelcomeComponent},
@@ -18,6 +20,8 @@ const routes: Routes = [
   {path: "meeting-room/:roomId", component: MeetingRoomComponent},
   {path: "login", component: LoginComponent},
   {path: "register", component: RegisterComponent},
+  {path: "settings/account-details", component: AccountDetailsComponent},
+  {path: "settings/security", component: SecurityComponent},
 ];
 
 @NgModule({

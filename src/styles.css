@@ -38,3 +38,34 @@
   border-bottom: var(--btn2-color) 4px solid;
   border-top: var(--btn2-color) 4px solid;
 }
+
+.custom-card1 {
+  border-bottom: var(--btn1-color) 4px solid;
+  border-top: var(--btn1-color) 4px solid;
+}
+
+.custom-card2 {
+  border-bottom: var(--btn2-color) 4px solid;
+  border-top: var(--btn2-color) 4px solid;
+}
+
+.custom-color-1 {
+  color: var(--main-color)!important;
+}
+
+.custom-bg-color-1 {
+  background-color: var(--main-color)!important;
+  border-color: var(--main-color)!important;
+
+}
+
+
+.mt-7 {
+  margin-top: 7%;
+}
+@media (max-width: 767px) {
+  .mt-7 {
+    margin-top: 25%;
+  }
+  }
+

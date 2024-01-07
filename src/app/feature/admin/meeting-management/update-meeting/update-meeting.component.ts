@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {AdminUserService} from "../../../../core/service/admin-user.service";
 import {ActivatedRoute, Router} from "@angular/router";
 import {FormBuilder, Validators} from "@angular/forms";
+import {ToastrService} from "ngx-toastr";
 
 @Component({
   selector: 'app-update-meeting',
@@ -16,7 +17,8 @@ export class UpdateMeetingComponent implements OnInit {
 
   constructor(private adminUserServ: AdminUserService, private route: ActivatedRoute,
               private router: Router,
-              private fb: FormBuilder) {
+              private fb: FormBuilder,
+              private toastr: ToastrService) {
   }
 
 
@@ -49,7 +51,9 @@ export class UpdateMeetingComponent implements OnInit {
           maxAttendees: this.meeting?.maxAttendees || '',
           status: this.meeting?.status || ''
         });
+        this.meetingForm.get('meetingId')?.disable();
         this.meetingForm.get('organizerId')?.disable();
+        this.meetingForm.get('roomId')?.disable();
 
       } else {
         console.log('response is undefined');
@@ -59,20 +63,32 @@ export class UpdateMeetingComponent implements OnInit {
 
   }
 
-  // update() {
-  //   if (this.meetingForm.valid) {
-  //     const updatedForm = this.meetingForm.value;
-  //     console.log('form final before update : ', updatedForm);
-  //     this.adminUserServ.updateMeeting(this.id, updatedForm).subscribe(data => {
-  //       console.log('data li tbadlet : ', data);
-  //       alert('updated successfully');
-  //       this.router.navigate(['admin/dashboard/show-meeting']);
-  //     });
-  //   } else {
-  //     console.log('form is not valid : ', this.meetingForm.value);
-  //   }
-  // }
+  update() {
+    if (this.meetingForm.valid) {
+      const updatedForm = this.meetingForm.value;
+      console.log('this.meetingForm.get(\'meetingId\') : ', <string>this.meetingForm.get('meetingId')?.value);
+      console.log('form final before update : ', updatedForm);
+      // this.adminUserServ.updateMeeting(<string>this.meetingForm.get('meetingId')?.value, updatedForm).subscribe(
+      this.adminUserServ.updateMeeting(<string>this.meetingForm.get('meetingId')?.value, updatedForm).subscribe(
+        (response) => {
 
+          console.log('data li tbadlet : ', response);
+          this.toastr.success('User updated successfully', 'Updated');
+          this.router.navigate(['admin/dashboard/show-meeting']);
+        },(error) => {
+          console.log('erreuuuur : ', error);
+
+          if (error.status === 400) {
+            this.toastr.error(error.error.message, 'Error');
+          } else {
+            this.toastr.error('An unexpected error occurred', 'Error');
+          }
+        }
+        );
+    } else {
+      console.log('form is not valid : ', this.meetingForm.value);
+    }
+  }
 
 
 }

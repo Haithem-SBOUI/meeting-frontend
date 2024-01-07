@@ -33,7 +33,7 @@
         Delete
       </button>
       <!-- Modal -->
-      <div class="modal fade" [id]="'exampleModal' + meeting.userId" tabindex="-1" aria-labelledby="exampleModalLabel"
+      <div class="modal fade" [id]="'exampleModal' + meeting.meetingId" tabindex="-1" aria-labelledby="exampleModalLabel"
            aria-hidden="true">
         <div class="modal-dialog">
           <div class="modal-content">
@@ -43,14 +43,15 @@
             </div>
             <div class="modal-body">
               <p>Are you sure you want to delete this user?</p>
-              <p>user id : {{ meeting.userId }}</p>
-              <p>username: {{ meeting.username }}</p>
+              <p>Meeting id : {{ meeting.meetingId }}</p>
+              <p>Room Id: {{ meeting.roomId }}</p>
+              <p>Organizer Email Id: {{ meeting.organizer[0].email }} </p>
             </div>
             <div class="modal-footer">
               <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-              <button class="btn bg-danger text-white " (click)="deleteUser(meeting.userId)" data-bs-dismiss="modal">
-                Delete
-              </button>
+<!--              <button class="btn bg-danger text-white " (click)="deleteMeeting(meeting.meetingId)" data-bs-dismiss="modal">-->
+<!--                Delete-->
+<!--              </button>-->
 
             </div>
           </div>
