@@ -13,9 +13,8 @@ import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import {ToastrModule} from "ngx-toastr";
 import {UpdateMeetingComponent} from './meeting-management/update-meeting/update-meeting.component';
 import {ShowMeetingComponent} from './meeting-management/show-meeting/show-meeting.component';
-import {TruncatePipe} from "../../shared/pipe/truncate.pipe";
-import {FormatDateTimePipe} from "../../shared/pipe/format-date-time.pipe";
-import { AddUserComponent } from './user-management/add-user/add-user.component';
+import {AddUserComponent} from './user-management/add-user/add-user.component';
+import {SharedModule} from "../../shared/shared.module";
 
 
 @NgModule({
@@ -27,8 +26,6 @@ import { AddUserComponent } from './user-management/add-user/add-user.component'
     UpdateUserComponent,
     UpdateMeetingComponent,
     ShowMeetingComponent,
-    TruncatePipe,
-    FormatDateTimePipe,
     AddUserComponent,
 
   ],
@@ -38,7 +35,8 @@ import { AddUserComponent } from './user-management/add-user/add-user.component'
     AdminRoutingModule,
     DataTablesModule,
     BrowserAnimationsModule, // required animations module
-    ToastrModule.forRoot(), // ToastrModule added
+    ToastrModule.forRoot(),
+    SharedModule,
 
   ]
 })

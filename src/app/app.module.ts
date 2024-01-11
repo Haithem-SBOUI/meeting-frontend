@@ -11,15 +11,14 @@ import {UserModule} from "./feature/user/user.module";
 import {AdminModule} from "./feature/admin/admin.module";
 import {DataTablesModule} from "angular-datatables";
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
-import {ToastrModule} from "ngx-toastr";
-import { TruncatePipe } from './shared/pipe/truncate.pipe';
-import { FormatDateTimePipe } from './shared/pipe/format-date-time.pipe';
+import {SharedModule} from "./shared/shared.module";
 
 @NgModule({
   declarations: [
     AppComponent,
     Test1Component,
     Test2Component,
+
 
   ],
   imports: [
@@ -32,13 +31,14 @@ import { FormatDateTimePipe } from './shared/pipe/format-date-time.pipe';
     BrowserModule,
     DataTablesModule,
     BrowserAnimationsModule,
+    SharedModule
 
 
 
   ],
   providers: [],
   exports: [
-    AppComponent
+    AppComponent,
   ],
   bootstrap: [AppComponent]
 })

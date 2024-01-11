@@ -5,7 +5,7 @@ import { Pipe, PipeTransform } from '@angular/core';
 })
 export class TruncatePipe implements PipeTransform {
 
-  transform(value: string, wordsNumber: number): string {
+  transform(value: string | undefined, wordsNumber: number): string {
     if (!value) return '';
 
     const wordsArray = value.split(' ');

@@ -14,8 +14,12 @@ import {RouterModule} from "@angular/router";
 import {LoginComponent} from './login/login.component';
 import {RegisterComponent} from './register/register.component';
 import {BrowserModule} from "@angular/platform-browser";
-import { AccountDetailsComponent } from './settings/account-details/account-details.component';
-import { SecurityComponent } from './settings/security/security.component';
+import {AccountDetailsComponent} from './settings/account-details/account-details.component';
+import {SecurityComponent} from './settings/security/security.component';
+import {ProfileComponent} from './profile/profile.component';
+import {MeetingTimelineComponent} from './meeting-timeline/meeting-timeline.component';
+import {SharedModule} from "../../shared/shared.module";
+import { JoinWithRoomIdComponent } from './join-with-room-id/join-with-room-id.component';
 
 
 @NgModule({
@@ -30,19 +34,25 @@ import { SecurityComponent } from './settings/security/security.component';
     RegisterComponent,
     AccountDetailsComponent,
     SecurityComponent,
+    ProfileComponent,
+    MeetingTimelineComponent,
+    JoinWithRoomIdComponent,
 
 
   ],
-    imports: [
-        CommonModule,
-        UserRoutingModule,
-        ReactiveFormsModule,
-        HttpClientModule,
-        RouterModule,
-        BrowserModule,
-        FormsModule
+  imports: [
+    CommonModule,
+    UserRoutingModule,
+    ReactiveFormsModule,
+    HttpClientModule,
+    RouterModule,
+    BrowserModule,
+    FormsModule,
+    SharedModule
 
-    ]
+
+
+  ]
 })
 export class UserModule {
 }

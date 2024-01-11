@@ -1,0 +1,33 @@
+<user-navbar></user-navbar>
+
+
+<section class="heading-page header-text" id="top">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12">
+        <h6>Join With it</h6>
+        <h2>You Have Already a Room Id?</h2>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="meetings-page" id="meetings">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-md-4 card custom-card1 shadow p-3 mb-5 ">
+        <div class="card-body">
+          <h2 class="text-center mb-5">Join Meet</h2>
+          <form [formGroup]="roomIdToJoin" (ngSubmit)="redirectToRoom2()">
+            <div class="form-floating mb-3">
+              <input type="text" formControlName="roomId" class="form-control mb-2" id="roomId" placeholder="">
+              <label for="roomId">roomId</label>
+            </div>
+            <button type="submit" class="btn custom-btn1 mt-4 mb-2">Join Meet</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+

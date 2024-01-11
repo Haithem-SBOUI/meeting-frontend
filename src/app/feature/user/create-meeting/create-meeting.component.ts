@@ -12,7 +12,6 @@ import {CreatedMeet} from "../../../model/CreatedMeet.model";
 })
 export class CreateMeetingComponent implements OnInit {
   creatMeetingForm!: FormGroup;
-  searchUserForm!: FormGroup;
   connectedUser: any;
   createdMeeting!: CreatedMeet;
   showBtnOptions: boolean = false;
@@ -29,12 +28,10 @@ export class CreateMeetingComponent implements OnInit {
       dateTime: ['', Validators.required],
       maxAttendees: ['', Validators.required],
       status: ['NOT_STARTED']
-    })
+    });
 
 
-    this.searchUserForm = this.fb.group({
-      email: ''
-    })
+
 
   }
 
@@ -61,23 +58,10 @@ export class CreateMeetingComponent implements OnInit {
 
   redirectToRoom(){
     this.router.navigate(['/meeting-room', this.createdMeeting.roomId]);
-
   };
 
-  getUserByEmail() {
-    this.authService.getUserByEmail(this.searchUserForm.get('email')?.value).subscribe(
-      async (response: any) => {
-        if (response) {
-          this.connectedUser = response
-          console.log("this.searchUserForm.value : ", this.searchUserForm.value)
-          console.log("connected user fetched successfully : ", response);
 
-        }
-      }, error => {
-        console.log("failed fetching connected user , error : ", error);
-        console.log("this.searchUserForm.value : ", this.searchUserForm.get('email')?.value);
-      }
-    )
-  }
+
+
 
 }

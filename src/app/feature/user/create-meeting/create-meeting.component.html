@@ -29,7 +29,7 @@
           </div>
 
           <!--create meeting -->
-          <div class="col-md-6 card custom-card1 shadow bg-body-tertiary p-3  mb-5">
+          <div class="col-md-9 card custom-card1 shadow bg-body-tertiary p-3 me-5 mb-5">
             <div class="card-body">
               <h2 class="text-center mb-5">Create Meeting</h2>
               <form class="" [formGroup]="creatMeetingForm" (ngSubmit)="createMeeting()">
@@ -64,80 +64,96 @@
 
                 <button type="submit" class="btn custom-btn1 mt-4 mb-2">Create Meet</button>
 
+
+                <div class="created-meet" *ngIf="createdMeeting != null">
+                  <h2 class="text-center mb-5">Created</h2>
+                  <!--          room-id-->
+                  <div>
+                    Room id : {{ this.createdMeeting.roomId }}
+                  </div>
+
+                  <!--          title-->
+                  <div>
+                    Room id : {{ this.createdMeeting.title }}
+                  </div>
+
+
+                  <!--          description-->
+                  <div>
+                    Room id : {{ this.createdMeeting.description }}
+                  </div>
+
+                  <!--          dateTime-->
+                  <div>
+                    Room id : {{ this.createdMeeting.dateTime }}
+                  </div>
+
+                  <!--          maxAttendees-->
+                  <div>
+                    Room id : {{ this.createdMeeting.maxAttendees }}
+                  </div>
+
+                  <div class="col-md-6" *ngIf="showBtnOptions">
+                    <button class="custom-btn1" (click)="redirectToDetails()">Show meet details</button>
+                  </div>
+
+                  <div class="col-md-6" *ngIf="showBtnOptions">
+                    <button class="custom-btn1" (click)="redirectToRoom()">Join Room</button>
+                  </div>
+
+                </div>
+
               </form>
             </div>
           </div>
 
+
           <!--created meeting -->
-          <div class="col-md-6 card custom-card1 shadow bg-body-tertiary p-3  mb-5" *ngIf="createdMeeting != null">
-            <div class="card-body">
-              <h2 class="text-center mb-5">Created</h2>
-              <!--          room-id-->
-              <div>
-                Room id : {{ this.createdMeeting.roomId }}
-              </div>
+          <!--          <div class="col-md-6 card custom-card1 shadow bg-body-tertiary p-3  mb-5" n >-->
+          <!--            <div class="card-body">-->
+          <!--              <div class="created-meet" *ngIf="createdMeeting != null">-->
+          <!--                <h2 class="text-center mb-5">Created</h2>-->
+          <!--                &lt;!&ndash;          room-id&ndash;&gt;-->
+          <!--                <div>-->
+          <!--                  Room id : {{ this.createdMeeting.roomId }}-->
+          <!--                </div>-->
 
-              <!--          title-->
-              <div>
-                Room id : {{ this.createdMeeting.title }}
-              </div>
-
-
-              <!--          description-->
-              <div>
-                Room id : {{ this.createdMeeting.description }}
-              </div>
-
-              <!--          dateTime-->
-              <div>
-                Room id : {{ this.createdMeeting.dateTime }}
-              </div>
-
-              <!--          maxAttendees-->
-              <div>
-                Room id : {{ this.createdMeeting.maxAttendees }}
-              </div>
-
-              <div class="col-md-6" *ngIf="showBtnOptions">
-                <button class="custom-btn1" (click)="redirectToDetails()">Show meet details</button>
-              </div>
-
-              <div class="col-md-6"  *ngIf="showBtnOptions">
-                <button class="custom-btn1" (click)="redirectToRoom()">Join Room</button>
-              </div>
+          <!--                &lt;!&ndash;          title&ndash;&gt;-->
+          <!--                <div>-->
+          <!--                  Room id : {{ this.createdMeeting.title }}-->
+          <!--                </div>-->
 
 
-            </div>
-          </div>
+          <!--                &lt;!&ndash;          description&ndash;&gt;-->
+          <!--                <div>-->
+          <!--                  Room id : {{ this.createdMeeting.description }}-->
+          <!--                </div>-->
+
+          <!--                &lt;!&ndash;          dateTime&ndash;&gt;-->
+          <!--                <div>-->
+          <!--                  Room id : {{ this.createdMeeting.dateTime }}-->
+          <!--                </div>-->
+
+          <!--                &lt;!&ndash;          maxAttendees&ndash;&gt;-->
+          <!--                <div>-->
+          <!--                  Room id : {{ this.createdMeeting.maxAttendees }}-->
+          <!--                </div>-->
+
+          <!--                <div class="col-md-6" *ngIf="showBtnOptions">-->
+          <!--                  <button class="custom-btn1" (click)="redirectToDetails()">Show meet details</button>-->
+          <!--                </div>-->
+
+          <!--                <div class="col-md-6" *ngIf="showBtnOptions">-->
+          <!--                  <button class="custom-btn1" (click)="redirectToRoom()">Join Room</button>-->
+          <!--                </div>-->
+
+          <!--              </div>-->
+          <!--            </div>-->
+          <!--          </div>-->
 
 
           <!--Connected user  -->
 
-          <div class="col-md-4 card custom-card1 shadow bg-body-tertiary p-3 ms-5 mb-5">
-            <div class="card-body">
-              <h2 class="text-center mb-5">Search User</h2>
-              <form class="" [formGroup]="searchUserForm" (ngSubmit)="getUserByEmail()">
-                <div class="form-floating mb-3">
-                  <input type="email" formControlName="email" class="form-control mb-2" id="searchuser"
-                         placeholder="">
-                  <label for="searchuser">Email</label>
-                </div>
-                <button type="submit" class="btn custom-btn1 mt-4 mb-2">Create Meet</button>
-              </form>
-              <h2 class="text-center mb-5">Create Meeting</h2>
-              <div class="connected-user" *ngIf="connectedUser">
-                <ul>
-                  <li>username : {{ connectedUser.username }}</li>
-                  <li>email : {{ connectedUser.email }}</li>
-                  <li>Connected<!-- Example -->
-                    <i class="fa"
-                       [ngClass]="{'fa-check': connectedUser.status === 'connected', 'fa-times': connectedUser.status !== 'connected'}"
-                       [style.color]="connectedUser.status === 'connected' ? 'green' : 'red'"></i>
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </div>
         </div>
 
 

@@ -3,88 +3,85 @@
     <div class="card-body p-4">
 
       <div class="header-text mb-5">
-        <h2 class="text-center">Update Meeting</h2>
+        <h2 class="text-center">All User</h2>
       </div>
 
-                        <form [formGroup]="meetingForm" (ngSubmit)="update()" class="form" action="">
-<!--            <form [formGroup]="meetingForm" class="form" action="">-->
-              <div class="form-floating mb-3">
-                <input type="text" formControlName="meetingId" class="form-control" id="meetingId"
-                       placeholder="Placeholder">
-                <label for="meetingId">meetingId</label>
-              </div>
+      <form [formGroup]="meetingForm" (ngSubmit)="update()" class="form" action="">
+        <!--            <form [formGroup]="meetingForm" class="form" action="">-->
+        <div class="form-floating mb-3">
+          <input type="text" formControlName="meetingId" class="form-control" id="meetingId"
+                 placeholder="Placeholder">
+          <label for="meetingId">meetingId</label>
+        </div>
 
-              <div class="form-floating mb-3">
-                <input  formControlName="organizerId" class="form-control" id="organizerId"
-                       placeholder="Placeholder" >
-                <label for="organizerId">Organizer Email</label>
-              </div>
-
-
-
-              <div class="form-floating mb-3">
-                <input type="text" formControlName="roomId" class="form-control" id="roomId" placeholder="Placeholder">
-                <label for="roomId">roomId</label>
-              </div>
-
-              <div class="form-floating mb-3">
-                <input type="url" formControlName="title" class="form-control" id="title" placeholder="Placeholder">
-                <label for="title">title</label>
-              </div>
+        <div class="form-floating mb-3">
+          <input formControlName="organizerId" class="form-control" id="organizerId"
+                 placeholder="Placeholder">
+          <label for="organizerId">Organizer Email</label>
+        </div>
 
 
-              <div class="form-group d-flex">
-                <div class="col-md-6">
-                  <div class="form-floating me-2">
-                    <input type="text" formControlName="description" class="form-control" id="description"
-                           placeholder="Placeholder">
-                    <label for="description">description</label>
-                  </div>
-                </div>
-                <div class="col-md-6 mb-3">
-                  <div class="form-floating"> <!-- Add "me-3" for right margin -->
-                    <input type="datetime-local" formControlName="dateTime" class="form-control" id="dateTime"
-                           placeholder="Placeholder">
-                    <label for="dateTime">dateTime</label>
-                  </div>
-                </div>
-              </div>
+        <div class="form-floating mb-3">
+          <input type="text" formControlName="roomId" class="form-control" id="roomId" placeholder="Placeholder">
+          <label for="roomId">roomId</label>
+        </div>
 
-              <div class="form-group d-flex">
-                <div class="col-md-6">
-                  <div class="form-floating me-2">
-                    <input type="text" formControlName="maxAttendees" class="form-control" id="maxAttendees"
-                           placeholder="Placeholder">
-                    <label for="maxAttendees">maxAttendees</label>
-                  </div>
-                </div>
-                <div class="col-md-6 mb-5">
-                  <div class="form-floating"> <!-- Add "me-3" for right margin -->
-                    <input type="text" formControlName="status" class="form-control" id="status"
-                           placeholder="Placeholder">
-
-                    <label for="status">status</label>
-                  </div>
-                </div>
-              </div>
+        <div class="form-floating mb-3">
+          <input type="url" formControlName="title" class="form-control" id="title" placeholder="Placeholder">
+          <label for="title">title</label>
+        </div>
 
 
-              <div class="form-group d-flex">
-                <div class="col-md-3">
-                  <!--                  <button type="button" (click)="back()" class="btn btn-secondary" >Back</button>-->
-                </div>
-                <div class="col-md-9 ">
-                  <div class="input-group Tmb-3">
-                    <button type="submit" class="btn custom-btn1 btn-lg w-100 fs-6 mb-3">Submit</button>
-                  </div>
-                </div>
-              </div>
+        <div class="form-group d-flex">
+          <div class="col-md-6">
+            <div class="form-floating me-2">
+              <input type="text" formControlName="description" class="form-control" id="description"
+                     placeholder="Placeholder">
+              <label for="description">description</label>
+            </div>
+          </div>
+          <div class="col-md-6 mb-3">
+            <div class="form-floating"> <!-- Add "me-3" for right margin -->
+              <input type="datetime-local" formControlName="dateTime" class="form-control" id="dateTime"
+                     placeholder="Placeholder">
+              <label for="dateTime">dateTime</label>
+            </div>
+          </div>
+        </div>
 
+        <div class="form-group d-flex">
+          <div class="col-md-6">
+            <div class="form-floating me-2">
+              <input type="text" formControlName="maxAttendees" class="form-control" id="maxAttendees"
+                     placeholder="Placeholder">
+              <label for="maxAttendees">maxAttendees</label>
+            </div>
+          </div>
+          <div class="col-md-6 mb-5">
+            <div class="form-floating"> <!-- Add "me-3" for right margin -->
+              <input type="text" formControlName="status" class="form-control" id="status"
+                     placeholder="Placeholder">
 
-            </form>
-
+              <label for="status">status</label>
+            </div>
           </div>
         </div>
 
 
-      </div>
+        <div class="form-group d-flex">
+          <div class="col-md-3">
+            <!--                  <button type="button" (click)="back()" class="btn btn-secondary" >Back</button>-->
+          </div>
+          <div class="col-md-9 ">
+            <div class="input-group Tmb-3">
+              <button type="submit" class="btn custom-btn1 btn-lg w-100 fs-6 mb-3">Submit</button>
+            </div>
+          </div>
+        </div>
+
+
+      </form>
+
+    </div>
+  </div>
+</div>

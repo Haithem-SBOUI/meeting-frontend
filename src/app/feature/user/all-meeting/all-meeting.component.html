@@ -78,7 +78,8 @@
                             <span class="iconify" data-icon="fluent:text-description-32-filled" data-width="23"></span>
                           </div>
                           <div class="text-part">
-                            <span>{{ meeting.description }}</span>
+
+                            <span>{{ meeting.description | truncate:5  }}</span>
                           </div>
                         </div>
 

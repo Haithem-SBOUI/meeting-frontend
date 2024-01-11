@@ -52,10 +52,38 @@
 .custom-color-1 {
   color: var(--main-color)!important;
 }
+.custom-color-2 {
+  color: var(--btn2-color)!important;
+}
 
 .custom-bg-color-1 {
   background-color: var(--main-color)!important;
   border-color: var(--main-color)!important;
+
+}
+
+html {
+  background-color: #F0F2F5;
+}
+.section1 {
+  background-image: url(assets/imgs/bg1.jpg);
+  background-position: center center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+
+section.apply-now {
+  background-image: url(assets/imgs/bg5.jpg)!important;
+}
+section.our-facts {
+  background-image: url(assets/imgs/bg4.jpg) !important;
+}
+
+.card-header {
+  color: black;
+  font-weight: bold;
 
 }
 

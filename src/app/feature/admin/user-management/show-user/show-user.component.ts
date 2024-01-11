@@ -3,6 +3,7 @@ import {AdminUserService} from "../../../../core/service/admin-user.service";
 import {ActivatedRoute, Router} from "@angular/router";
 import {HttpErrorResponse} from "@angular/common/http";
 import {ToastrService} from 'ngx-toastr';
+import {Subject} from "rxjs";
 
 
 @Component({
@@ -13,6 +14,8 @@ import {ToastrService} from 'ngx-toastr';
 export class ShowUserComponent implements OnInit {
   dtOptions: DataTables.Settings = {};
   allUsers: any;
+  dtTrigger: Subject<any> = new Subject<any>();
+
 
 
   constructor(private toastr: ToastrService, private adminUserServ: AdminUserService, private router: Router, private route: ActivatedRoute) {
@@ -35,6 +38,7 @@ export class ShowUserComponent implements OnInit {
   getAllUsers(){
     this.adminUserServ.getAllUser().subscribe((response: any) => {
       this.allUsers = response;
+      this.dtTrigger.next(null);
       console.log("all users : ", this.allUsers)
     });
   }
