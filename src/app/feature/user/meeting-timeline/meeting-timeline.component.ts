@@ -9,7 +9,6 @@ import {Router} from "@angular/router";
   styleUrls: ['./meeting-timeline.component.css']
 })
 export class MeetingTimelineComponent implements OnInit {
-  // todo: add format time method
   meetingDetail: MeetingDetails[] = [];
 
   constructor(private meetingService: MeetingService, private router: Router) {

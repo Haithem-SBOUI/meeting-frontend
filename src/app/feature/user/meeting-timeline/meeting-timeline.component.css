@@ -1,5 +1,5 @@
 .timeline {
-  border-left: 1px solid hsl(0, 0%, 0%);
+  border-left: 2px solid var(--second-color);
   position: relative;
   list-style: none;
 }
@@ -15,12 +15,18 @@
 }
 
 .timeline .timeline-item:after {
-  background-color: hsl(0, 100%, 50%);
-  left: -38px;
-  border-radius: 50%;
-  height: 11px;
-  width: 11px;
+  background-color: var(--btn2-color);
+  left: -43px;
+  border-radius: 40%;
+  height: 20px;
+  width: 20px;
   content: "";
+}
+
+.btn {
+  color: var(--btn1-color)!important;
+  border: 2px solid var(--btn1-color);
+
 }
 
 .my-card {

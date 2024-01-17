@@ -20,7 +20,7 @@
             <div class="meeting-single-item">
               <div class="thumb">
                 <div class="price">
-                  <span>$14.00</span>
+                  <button type="button" class="btn custom-btn1" [routerLink]="['/admin/dashboard/update-meeting', meetingDetail.roomId]"><span class="iconify" data-icon="ic:outline-edit" data-width="30" data-height="30"></span></button>
                 </div>
                 <div class="date">
                   <h6>Nov <span>12</span></h6>
@@ -78,3 +78,4 @@
       </div>
     </div>
   </div>
+</section>

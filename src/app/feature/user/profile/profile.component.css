@@ -1,22 +1,6 @@
-.meeting-details {
-  position: relative;
 
-}
 
-.meeting-details .buttons {
-  position: absolute;
-  top: 10px;
-  right: 10px;
-}
 
-.buttons button {
-  margin-left: 10px;
-  background: none;
-  border: none;
-  cursor: pointer;
-  font-size: 16px;
-  color: #007bff; /* Adjust the color as needed */
-}
 
 .wrapper {
   min-height: 100vh;
@@ -83,8 +67,7 @@
 
 .profile-card__cnt {
   margin-top: -35px;
-  padding: 0 20px;
-  padding-bottom: 40px;
+  padding: 0 20px 40px;
   transition: all 0.3s;
 }
 
@@ -96,10 +79,9 @@
 }
 
 .profile-card__txt {
-  font-size: 18px;
-  font-weight: 500;
-  color: #324e63;
-  margin-bottom: 15px;
+  font-size: 17px;
+  color: #494949;
+  margin-bottom: 5px;
 }
 
 .profile-card__txt strong {
